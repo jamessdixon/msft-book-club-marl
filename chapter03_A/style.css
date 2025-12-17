@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(12, 70px);
+    grid-template-rows: repeat(8, 70px);
+    gap: 5px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#nextTurnBtn {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+}
+
+#nextTurnBtn:hover {
+    background-color: #0056b3;
+}
+
+/* ---------------- Fog of War ---------------- */
+
+.cell {
+    width: 70px;
+    height: 70px;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+
+    /* unseen default */
+    background-color: #111;
+    transition: background-color 0.2s ease;
+}
+
+/* cells visible to at least one agent */
+.cell.visible {
+    background-color: #777;
+}
+
+/* optional hover effect only when visible */
+.cell.visible:hover {
+    background-color: #888;
+}
+
+/* ---------------- Entities ---------------- */
+
+.agent {
+    color: black;
+    font-size: 48px;
+    pointer-events: none;
+}
+
+.apple {
+    color: red;
+    font-size: 36px;
+    font-weight: bold;
+    pointer-events: none;
+}
